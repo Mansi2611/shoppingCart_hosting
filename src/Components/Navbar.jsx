@@ -1,0 +1,37 @@
+import {FaShoppingCart} from "react-icons/fa"
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+// import {cart} from "../redux/Slices/CartSlice"
+
+const Navbar = () => {
+  const {cart}= useSelector((state)=>state);
+  return(
+    <div>
+      <nav className="flex justify-between items-center h-20 max-w-6xl">
+      <NavLink to="/">
+        <div className="ml-20 w-[130px] ">
+        <img src="data:image/png;base64,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" alt="logo"></img>
+        </div>       
+      </NavLink>
+        <div className="flex item-center font-medium text-slate-100 mr-5 gap-5 sapce-x-6">
+
+          <NavLink to="/">
+          <p>Home</p>
+
+          </NavLink>
+
+          <NavLink to="/cart" >
+            <div className="relative">
+          <FaShoppingCart className="text-2xl"></FaShoppingCart>
+           {
+          cart.length > 0 &&
+          <span className="absolute -top-1 -right-2 bg-green-600 text-xs w-5 h-5 flex justify-center items-center animate-bounce rounded-full text-white">{cart.length}</span>
+           }</div>
+          </NavLink>
+        </div>
+      </nav>
+    </div>
+  )
+};
+
+export default Navbar;
